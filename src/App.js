@@ -117,7 +117,7 @@ function App() {
                 <div 
                   className="dragContent"
                   ref={provided.innerRef}
-                  {...provided.dragHandleProps} //DragHandleProps need to be applied to the node that you want to be the drag handle
+                  {...provided.dragHandleProps}
                   {...provided.draggableProps}
                   style={{
                     backgroundColor: snapshot.isDragging ? "#263B4A" : "#456C86",
@@ -139,13 +139,13 @@ function App() {
                                   <div key={id} className="dropContainer">
                                     <h2>{column.name}</h2>
                                     <Droppable droppableId={id}>
-                                    {(provided, snapshot) => {
+                                    {(provided, snapshot) => { 
                                       return (
                                         <div
                                         className="dragContainer"
                                         style={{background: snapshot.isDraggingOver ? "lightblue" : "lightgrey"}}
-                                        {...provided.droppableProps} //Object that contains properties that need to be applied to a Droppable element. It needs to be applied to the same element that you apply provided.innerRef to
-                                        ref={provided.innerRef} //In order for the droppable to function correctly, you must bind the provided.innerRef to the highest possible DOM node in the ReactElement
+                                        {...provided.droppableProps} //designate which component want droppable.
+                                        ref={provided.innerRef} // <Draggable /> and <Droppable /> components both require a HTMLElement to be provided to them using the innerRef property on the DraggableProvided and DroppableProvided objects.
                                         >
                                           {renderItem(column)}
                                           {provided.placeholder /*This is used to create space in the <Droppable /> as needed during a drag */}
