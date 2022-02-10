@@ -1,0 +1,26 @@
+.App{
+  display: flex;
+  justify-content: flex-start;
+  height: 100%;
+}
+
+.dropContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 8px
+}
+
+.dragContainer{
+    padding: 4px;
+    width: 250px;
+    /* min-height: 500px */
+}
+
+.dragContent{
+  user-select: "none";  /* property  prevent s the text of an element can be selected.*/
+  padding: 16px;
+  margin: 0 0 8px 0;
+  min-height: 50px;
+  color: white;
+}
